@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solve</title>
+  <link rel="stylesheet" href="./assets/css/default.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <script src="./assets/js/includeHTML.js"></script>
+</head>
+
+<body>
+  <div id="header" include-html="./include/header.html"></div>
+  <main id="shop">
+    <h2 class="heading-xlarge-uppercase">shop</h2>
+    <section id="filter">
+      <ul class="filter-btns">
+        <li><button class="category-btn selected" data-filter="*">all</button></li>
+        <li><button class="category-btn" data-filter="sofa">sofa</button></li>
+        <li><button class="category-btn" data-filter="lamp">lamp</button></li>
+        <li><button class="category-btn" data-filter="chair">chair</button></li>
+      </ul>
+      <div class="container">
+        <ul class="filter-items">
+          <li class="item" data-type="chair">
+            <img src="./assets/img/shop/ModernChair.png" alt="Modern Chair">
+            <div class="item-title">
+              <h5>Modern Chair</h5>
+              <h6>$ 249.00 USD</h6>
+            </div>
+          </li>
+          <li class="item" data-type="lamp">
+            <img src="./assets/img/shop/ElegantLamp.png" alt="Elegant Lamp">
+            <div class="item-title">
+              <h5>Elegant Lamp</h5>
+              <h6>$ 129.00 USD</h6>
+            </div>
+          </li>
+          <li class="item" data-type="chair">
+            <img src="./assets/img/shop/BlackChair.png" alt="BlackChair">
+            <div class="item-title">
+              <h5>Black Chair</h5>
+              <h6>$ 199.00 USD</h6>
+            </div>
+          </li>
+          <li class="item" data-type="sofa">
+            <img src="./assets/img/shop/LisbonSofa.png" alt="LisbonSofa">
+            <div class="item-title">
+              <h5>Lisbon Sofa</h5>
+              <h6>$ 1699.00 USD</h6>
+            </div>
+          </li>
+          <li class="item" data-type="chair">
+            <img src="./assets/img/shop/RetroChair.png" alt="RetroChair">
+            <div class="item-title">
+              <h5>Retro Chair</h5>
+              <h6>$ 399.00 USD</h6>
+            </div>
+          </li>
+          <li class="item" data-type="chair">
+            <img src="./assets/img/shop/BlackChair2.png" alt="BlackChair">
+            <div class="item-title">
+              <h5>Black Chair</h5>
+              <h6>$ 199.00 USD</h6>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section id="help">
+      <div class="container">
+        <h2 class="heading-small">Help?</h2>
+        <div class="help-box">
+          <div class="local-stores">
+            <h3>Local Stores</h3>
+            <div class="help-text-gird">
+              <p>
+                Proin fermentum leo vel orci porta non pulvinar. Diam phasellus vestibulum lorem sed risus ultricies.
+              </p>
+              <a href="#none">find a sotre <img src="./assets/img/Frontpage/arrow.png" alt=""></a>
+            </div>
+          </div>
+          <div class="questions">
+            <h3>Questions?</h3>
+            <div class="help-text-gird">
+              <p>
+                Proin fermentum leo vel orci porta non pulvinar. Diam phasellus vestibulum lorem sed risus ultricies.
+              </p>
+              <a href="#none">read the faq <img src="./assets/img/Frontpage/arrow.png" alt=""></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="footer" include-html="./include/footer.html"></div>
+
+  <script>includeHTML();</script>
+  <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
