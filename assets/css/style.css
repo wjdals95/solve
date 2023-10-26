@@ -18,14 +18,12 @@ h3 {
 	font-style: normal;
 	font-weight: 400;
 	line-height: 110%;
-	text-transform: uppercase;
 }
 h4 {
 	font-size: 32px;
 	font-style: normal;
 	font-weight: 400;
 	line-height: 110%; /* 35.2px */
-	text-transform: uppercase;
 }
 h5 {
 	font-size: 20px;
@@ -33,7 +31,6 @@ h5 {
 	font-weight: 500;
 	line-height: normal;
 	letter-spacing: 1px;
-	text-transform: uppercase;
 }
 h6 {
 	font-size: 16px;
@@ -41,7 +38,6 @@ h6 {
 	font-weight: 500;
 	line-height: normal;
 	letter-spacing: 1px;
-	text-transform: uppercase;
 }
 p {
 	font-family: "CabinetGrotesk-Medium", sans-serif;
@@ -475,6 +471,9 @@ footer .container .footer-box .footer-item .footer-text-box a {
 	bottom: 100px;
 }
 /* ######################  ROOMS SECTION  ###################### */
+#rooms {
+	border-bottom: 1px solid #cecece;
+}
 #rooms .container .rooms-see {
 	margin: 0 auto 50px;
 	display: flex;
@@ -561,7 +560,7 @@ footer .container .footer-box .footer-item .footer-text-box a {
 	left: 0;
 	bottom: -3px;
 	height: 1px;
-	background-color: red;
+	background-color: #343339;
 	transition: 0.3s;
 	animation: name duration timing-function delay iteration-count direction
 		fill-mode;
@@ -676,4 +675,87 @@ footer .container .footer-box .footer-item .footer-text-box a {
 	font-weight: 500;
 	letter-spacing: 1.6px;
 	text-transform: uppercase;
+}
+/* ######################  ROMMS SWIPER SECTION  ###################### */
+.swiper .swiper-wrapper .swiper-slide img {
+	width: 100vw;
+	height: 100vh;
+	object-fit: cover;
+	object-position: center;
+}
+.swiper .swiper-wrapper .swiper-slide .swiper-text-box {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.swiper .swiper-wrapper .swiper-slide .swiper-text-box a {
+	color: #fff;
+	padding: 24px 40px;
+	border-radius: 500px;
+	border: 1px solid #fff;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	letter-spacing: 1.6px;
+	text-transform: uppercase;
+}
+/* ######################  ROMM SINGLE SECTION  ###################### */
+.room-header .room-header-box {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+.room-header .room-header-box .left {
+	width: 50%;
+}
+.room-header .room-header-box .right a {
+	font-size: 16px;
+	font-weight: 500;
+	letter-spacing: 1.6px;
+	text-transform: uppercase;
+}
+.room-img img {
+	max-width: 100%;
+}
+.room-content .container {
+	display: flex;
+	gap: 80px;
+	padding: 120px 200px;
+}
+.room-content h3 {
+	display: block;
+	width: 50%;
+}
+.room-content .right {
+	width: 40%;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+.room-next .container {
+	padding: 200px 120px 120px;
+}
+.room-next .room-box {
+	position: relative;
+	display: flex;
+	justify-content: center;
+}
+.room-next .room-box h3 {
+	font-size: 260px;
+	font-weight: 400;
+	line-height: 90%; /* 234px */
+	text-transform: uppercase;
+	position: absolute;
+	top: -170px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.room-next .room-box img {
+	border-radius: 500px;
 }

@@ -7,18 +7,78 @@
   <title>Solve</title>
   <!-- CSS CDN -->
   <link rel="stylesheet" href="./assets/css/default.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./assets/css/style.css">
   <!-- JS CDN -->
   <script src="./assets/js/includeHTML.js"></script>
+
+  <style>
+    header a {
+      color: #fff;
+    }
+  </style>
 </head>
 
 <body>
   <div id="header" include-html="./include/header.html"></div>
-  <main>
-    <section></section>
-  </main>
+    <section>
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide"><img src="./assets/img/rooms/Oslo.png" alt="Oslo">
+            <div class="swiper-text-box">
+              <div class="heading-xlarge">Oslo</div>
+              <a href="room-oslo.html">explore</a>
+            </div>
+          </div>
+          <div class="swiper-slide"><img src="./assets/img/rooms/Oslo2.png" alt="Oslo">
+            <div class="swiper-text-box">
+              <div class="heading-large">Oslo</div>
+              <a href="room-oslo2.html">explore</a>
+            </div>
+          </div>
+          <div class="swiper-slide"><img src="./assets/img/rooms/Lisbon.png" alt="Lisbon">
+            <div class="swiper-text-box">
+              <div class="heading-large">Lisbon</div>
+              <a href="room-lisbon.html">explore</a>
+            </div>
+          </div>
+          <div class="swiper-slide"><img src="./assets/img/rooms/Berlin.png" alt="Berlin">
+            <div class="swiper-text-box">
+              <div class="heading-large">Berlin</div>
+              <a href="room-berlin.html">explore</a>
+            </div>
+          </div>
+          <div class="swiper-slide"><img src="./assets/img/rooms/Madrid.png" alt="Madrid">
+            <div class="swiper-text-box">
+              <div class="heading-large">Madrid</div>
+              <a href="room-madrid.html">explore</a>
+            </div>
+          </div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
 
-  <script>includeHTML();</script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    includeHTML();
+    const swiper = new Swiper('.swiper', {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        dynamicBullets: true,
+        clickable: true,
+      },
+    });</script>
   <script src="./assets/js/script.js"></script>
 </body>
 
