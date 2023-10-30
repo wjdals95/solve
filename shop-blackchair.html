@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sølve</title>
+  <!-- CSS CDN -->
+  <link rel="stylesheet" href="./assets/css/default.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <!-- JS CDN -->
+  <script src="./assets/js/includeHTML.js"></script>
+</head>
+
+<body>
+  <div id="header" include-html="./include/header.html"></div>
+  <div class="shop-details-pop">
+    <div class="bg-overlay"></div>
+    <div class="shop-details">
+      <div class="container">
+        <button class="close">close</button>
+        <div class="details-box">
+          <h3>Details</h3>
+          <div class="details-desc">
+            <p>
+              Mauris cursus mattis molestie a iaculis at erat pellentesque adipiscing. Netus et malesuada fames ac
+              turpis
+              egestas
+              integer eget. A diam maecenas sed enim ut sem viverra aliquet eget. Vel fringilla est ullamcorper eget
+              nulla
+              facilisi
+              etiam. Velit egestas dui id ornare arcu odio ut. Felis donec et odio pellentesque diam volutpat commodo
+              sed
+              egestas.
+            </p>
+            <ul>
+              <li>Proin fermentum leo vel orci porta non pulvinar</li>
+              <li>Diam phasellus vestibulum</li>
+              <li>Quisque egestas diam in arcu cursus</li>
+            </ul>
+          </div>
+        </div>
+        <span class="line"></span>
+        <div class="details-box">
+          <h3>Delivery</h3>
+          <div class="details-desc">
+            <p>
+              Mauris cursus mattis molestie a iaculis at erat pellentesque adipiscing. Netus et malesuada fames ac
+              turpis
+              egestas
+              integer eget. A diam maecenas sed enim ut sem viverra aliquet eget. Vel fringilla est ullamcorper eget
+              nulla
+              facilisi
+              etiam.
+            </p>
+          </div>
+        </div>
+        <span class="line"></span>
+        <div class="details-box">
+          <h3>Returns</h3>
+          <div class="details-desc">
+            <p>
+              Mauris cursus mattis molestie a iaculis at erat pellentesque adipiscing. Netus et malesuada fames ac
+              turpis
+              egestas
+              integer eget.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="gallery">
+    <img src="./assets/img/Frontpage/BlackChair.png" alt="">
+    <div class="content">
+      <div class="content-title">
+        <h3 class="heading-medium">
+          Black<br>Chair
+        </h3>
+        <div>
+          <h6>
+            $ 129.00 USD
+          </h6>
+          <p class="text-medium">
+            Mauris cursus mattis molestie a iaculis at erat pellentesque adipiscing. Netus et malesuada fames ac turpis
+            egestas integer eget.
+          </p>
+        </div>
+      </div>
+      <div class="content-cart">
+        <div class="num-box">
+          <span class="minus">-</span>
+          <span class="num-value">1</span>
+          <span class="plus">+</span>
+        </div>
+        <button class="add-cart">add to cart</button>
+      </div>
+      <ul class="content-details">
+        <li><a href="#none">Details</a></li>
+        <li><a href="#none">Delivery</a></li>
+        <li><a href="#none">Returns</a></li>
+      </ul>
+    </div>
+  </section>
+  <section class="desc">
+    <div class="container">
+      <h4>Description</h4>
+      <div class="desc-content">
+        <p>
+          Mauris cursus mattis molestie a iaculis at erat pellentesque adipiscing. Netus et malesuada fames ac turpis
+          egestas
+          integer eget. A diam maecenas sed enim ut sem viverra aliquet eget. Vel fringilla est ullamcorper eget nulla
+          facilisi
+          etiam. Velit egestas dui id ornare arcu odio ut. Felis donec et odio pellentesque diam volutpat commodo sed
+          egestas.
+          Auctor eu augue ut lectus arcu bibendum at varius. Rhoncus mattis rhoncus urna neque viverra justo nec
+          ultrices.
+        </p>
+        <ul>
+          <li>Proin fermentum leo vel orci porta non pulvinar</li>
+          <li>Diam phasellus vestibulum</li>
+          <li>Quisque egestas diam in arcu cursus</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="related">
+    <div class="container">
+      <h2>Related</h2>
+      <ul class="filter-items">
+        <li class="item" data-type="chair">
+          <a href="shop-modernchair.html">
+            <img src="./assets/img/shop/ModernChair.png" alt="Modern Chair">
+            <div class="item-title">
+              <h5>Modern Chair</h5>
+              <h6>$ 249.00 USD</h6>
+            </div>
+          </a>
+        </li>
+        <li class="item" data-type="lamp">
+          <a href="shop-elegantlamp.html">
+            <img src="./assets/img/shop/ElegantLamp.png" alt="Elegant Lamp">
+            <div class="item-title">
+              <h5>Elegant Lamp</h5>
+              <h6>$ 129.00 USD</h6>
+            </div>
+          </a>
+        </li>
+        <li class="item" data-type="chair">
+          <a href="shop-blackchair.html">
+            <img src="./assets/img/shop/BlackChair.png" alt="BlackChair">
+            <div class="item-title">
+              <h5>Black Chair</h5>
+              <h6>$ 199.00 USD</h6>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <div id="footer" include-html="./include/footer.html"></div>
+
+  <script>includeHTML();</script>
+  <script src="./assets/js/script.js"></script>
+</body>
+
+</html>

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Solve</title>
+  <title>Sølve</title>
   <link rel="stylesheet" href="./assets/css/default.css">
   <link rel="stylesheet" href="./assets/css/style.css">
   <script src="./assets/js/includeHTML.js"></script>
@@ -24,46 +24,58 @@
       <div class="container">
         <ul class="filter-items">
           <li class="item" data-type="chair">
-            <img src="./assets/img/shop/ModernChair.png" alt="Modern Chair">
-            <div class="item-title">
-              <h5>Modern Chair</h5>
-              <h6>$ 249.00 USD</h6>
-            </div>
+            <a href="shop-modernchair.html">
+              <img src="./assets/img/shop/ModernChair.png" alt="Modern Chair">
+              <div class="item-title">
+                <h5>Modern Chair</h5>
+                <h6>$ 249.00 USD</h6>
+              </div>
+            </a>
           </li>
           <li class="item" data-type="lamp">
-            <img src="./assets/img/shop/ElegantLamp.png" alt="Elegant Lamp">
-            <div class="item-title">
-              <h5>Elegant Lamp</h5>
-              <h6>$ 129.00 USD</h6>
-            </div>
+            <a href="shop-elegantlamp.html">
+              <img src="./assets/img/shop/ElegantLamp.png" alt="Elegant Lamp">
+              <div class="item-title">
+                <h5>Elegant Lamp</h5>
+                <h6>$ 129.00 USD</h6>
+              </div>
+            </a>
           </li>
           <li class="item" data-type="chair">
-            <img src="./assets/img/shop/BlackChair.png" alt="BlackChair">
-            <div class="item-title">
-              <h5>Black Chair</h5>
-              <h6>$ 199.00 USD</h6>
-            </div>
+            <a href="shop-blackchair.html">
+              <img src="./assets/img/shop/BlackChair.png" alt="BlackChair">
+              <div class="item-title">
+                <h5>Black Chair</h5>
+                <h6>$ 199.00 USD</h6>
+              </div>
+            </a>
           </li>
           <li class="item" data-type="sofa">
-            <img src="./assets/img/shop/LisbonSofa.png" alt="LisbonSofa">
-            <div class="item-title">
-              <h5>Lisbon Sofa</h5>
-              <h6>$ 1699.00 USD</h6>
-            </div>
+            <a href="shop-lisbonsofa.html">
+              <img src="./assets/img/shop/LisbonSofa.png" alt="LisbonSofa">
+              <div class="item-title">
+                <h5>Lisbon Sofa</h5>
+                <h6>$ 1699.00 USD</h6>
+              </div>
+            </a>
           </li>
           <li class="item" data-type="chair">
-            <img src="./assets/img/shop/RetroChair.png" alt="RetroChair">
-            <div class="item-title">
-              <h5>Retro Chair</h5>
-              <h6>$ 399.00 USD</h6>
-            </div>
+            <a href="shop-retrochair.html">
+              <img src="./assets/img/shop/RetroChair.png" alt="RetroChair">
+              <div class="item-title">
+                <h5>Retro Chair</h5>
+                <h6>$ 399.00 USD</h6>
+              </div>
+            </a>
           </li>
           <li class="item" data-type="chair">
-            <img src="./assets/img/shop/BlackChair2.png" alt="BlackChair">
-            <div class="item-title">
-              <h5>Black Chair</h5>
-              <h6>$ 199.00 USD</h6>
-            </div>
+            <a href="shop-blackcahir2.html">
+              <img src="./assets/img/shop/BlackChair2.png" alt="BlackChair">
+              <div class="item-title">
+                <h5>Black Chair</h5>
+                <h6>$ 199.00 USD</h6>
+              </div>
+            </a>
           </li>
         </ul>
       </div>
@@ -96,7 +108,42 @@
   </main>
   <div id="footer" include-html="./include/footer.html"></div>
 
-  <script>includeHTML();</script>
+  <script>
+    includeHTML();
+    //filter event
+    const categoryBtn = document.querySelector(".filter-btns");
+    const categoryItems = document.querySelectorAll(".filter-items .item");
+    const categoryItemsBox = document.querySelector(".filter-items");
+    categoryBtn.addEventListener("click", (e) => {
+      const filter = e.target.dataset.filter;
+      // console.log(filter);
+
+      if (filter == null) {
+        return;
+      }
+
+      const active = document.querySelector(".category-btn.selected");
+      active.classList.remove("selected");
+
+      const target =
+        e.target.nodeName === "BUTTON" ? e.target : e.target.parentNode;
+      target.classList.add("selected");
+
+      categoryItemsBox.classList.add("anim-out");
+
+      setTimeout(() => {
+        categoryItems.forEach((item) => {
+          if (filter === "*" || filter === item.dataset.type) {
+            item.classList.remove("unselected");
+          } else {
+            item.classList.add("unselected");
+          }
+          categoryItemsBox.classList.remove("anim-out");
+          categoryItemsBox.classList.add("anim-in");
+        }, 300);
+      });
+    });
+  </script>
   <script src="./assets/js/script.js"></script>
 </body>
 

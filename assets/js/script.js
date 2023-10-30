@@ -1,55 +1,51 @@
 window.onload = function () {
 	//menu click event
-
-	const bgOverlay = document.querySelector(".bg-overlay");
-	const dropdownMenu = document.querySelector(".dropdown-menu");
+	const body = document.getElementsByTagName("body")[0];
+	const navBgOverlay = document.querySelector(".nav-drop .bg-overlay");
+	const dropdownMenu = document.querySelector(".nav-drop .dropdown-menu");
 	const menu = document.querySelector(".menu");
 	const bodyWidth = document.documentElement.clientWidth;
 	const bodyHeight = document.body.scrollHeight;
 
-	bgOverlay.style.width = bodyWidth + "px";
-	bgOverlay.style.height = bodyHeight + "px";
+	navBgOverlay.style.width = bodyWidth + "px";
+	navBgOverlay.style.height = bodyHeight + "px";
 
 	menu.addEventListener("click", () => {
-		bgOverlay.classList.toggle("active");
+		navBgOverlay.classList.toggle("active");
 		dropdownMenu.classList.toggle("active");
+		body.classList.toggle("scrollLock");
 	});
-	bgOverlay.addEventListener("click", () => {
-		bgOverlay.classList.remove("active");
+	navBgOverlay.addEventListener("click", () => {
+		navBgOverlay.classList.remove("active");
 		dropdownMenu.classList.remove("active");
+		body.classList.remove("scrollLock");
 	});
 
-	//filter event
-	const categoryBtn = document.querySelector(".filter-btns");
-	const categoryItems = document.querySelectorAll(".filter-items .item");
-	const categoryItemsBox = document.querySelector(".filter-items");
-	categoryBtn.addEventListener("click", (e) => {
-		const filter = e.target.dataset.filter;
-		// console.log(filter);
+	//SHOP DETAILS CLICK EVENT
+	const shopDetails = document.querySelectorAll(".content-details li a");
+	const shopBgOverlay = document.querySelector(".shop-details-pop .bg-overlay");
+	const shopDetailsBox = document.querySelector(
+		".shop-details-pop .shop-details"
+	);
+	const shopClose = document.querySelector(".shop-details .close");
 
-		if (filter == null) {
-			return;
-		}
-
-		const active = document.querySelector(".category-btn.selected");
-		active.classList.remove("selected");
-
-		const target =
-			e.target.nodeName === "BUTTON" ? e.target : e.target.parentNode;
-		target.classList.add("selected");
-
-		categoryItemsBox.classList.add("anim-out");
-
-		setTimeout(() => {
-			categoryItems.forEach((item) => {
-				if (filter === "*" || filter === item.dataset.type) {
-					item.classList.remove("unselected");
-				} else {
-					item.classList.add("unselected");
-				}
-				categoryItemsBox.classList.remove("anim-out");
-				categoryItemsBox.classList.add("anim-in");
-			}, 300);
+	for (let i = 0; i < shopDetails.length; i++) {
+		shopDetails[i].addEventListener("click", (e) => {
+			shopBgOverlay.classList.add("active");
+			shopDetailsBox.classList.add("show");
+			body.classList.add("scrollLock");
+			window.scrollTo(0, 0);
+			e.preventDefault();
 		});
+	}
+	shopBgOverlay.addEventListener("click", () => {
+		shopBgOverlay.classList.remove("active");
+		shopDetailsBox.classList.remove("show");
+		body.classList.remove('scrollLock');
+	});
+	shopClose.addEventListener("click", () => {
+		shopBgOverlay.classList.remove("active");
+		shopDetailsBox.classList.remove("show");
+		body.classList.remove("scrollLock");
 	});
 };

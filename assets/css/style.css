@@ -1,4 +1,7 @@
 @import url(font.css);
+body {
+	overflow-x: hidden;
+}
 h1,
 h2,
 h3,
@@ -109,7 +112,9 @@ section h2 {
 	line-height: 100%; /* 220px */
 	text-transform: uppercase;
 }
-
+.scrollLock {
+	overflow: hidden;
+}
 /* ######################  HEADER SECTION  ###################### */
 header {
 	position: absolute;
@@ -413,12 +418,13 @@ footer .container .footer-box .footer-item .footer-text-box a {
 	font-weight: 400;
 	line-height: 180%;
 }
-#about .container .about-textbox button {
+#about .container .about-textbox a {
 	border: 1px solid #343339;
 	padding: 24px 40px;
 	border-radius: 500px;
 	text-transform: uppercase;
 	margin-top: 70px;
+	cursor: pointer;
 }
 /* ######################  IMAGES SECTION  ###################### */
 #images {
@@ -554,36 +560,34 @@ footer .container .footer-box .footer-item .footer-text-box a {
 	cursor: pointer;
 	position: relative;
 }
-#shop .filter-btns .category-btn.selected::after {
+#shop .filter-btns .category-btn::after {
 	content: "";
 	position: absolute;
-	left: 0;
+	left: 50%;
 	bottom: -3px;
+	transform: translateX(-50%);
+	width: 0%;
 	height: 1px;
 	background-color: #343339;
-	transition: 0.3s;
-	animation: name duration timing-function delay iteration-count direction
-		fill-mode;
-	animation: filterLine 0.3s linear forwards;
+	transition: all 0.5s;
 }
-@keyframes filterLine {
-	0% {
-		width: 0;
-	}
-	100% {
-		width: 100%;
-	}
+#shop .filter-btns .category-btn:hover::after,
+#shop .filter-btns .category-btn.selected::after {
+	width: 100%;
 }
-#shop .filter-items {
+#shop .container {
+	padding: 0 120px 120px;
+}
+.filter-items {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	gap: 55px;
 }
-#shop .filter-items.anim-in {
+.filter-items.anim-in {
 	animation: animIn 1s linear forwards;
 }
-#shop .filter-items.anim-out {
+.filter-items.anim-out {
 	animation: animOut 1s linear forwards;
 }
 @keyframes animIn {
@@ -602,7 +606,7 @@ footer .container .footer-box .footer-item .footer-text-box a {
 		opacity: 0;
 	}
 }
-#shop .filter-items .item {
+.filter-items .item a {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -611,11 +615,11 @@ footer .container .footer-box .footer-item .footer-text-box a {
 	transition: 0.3s;
 	position: relative;
 }
-#shop .filter-items .item.unselected {
+.filter-items .item.unselected {
 	display: none;
 	opacity: 0;
 }
-#shop .filter-items .item:first-child::after {
+.filter-items .item:first-child a::after {
 	content: "NEW";
 	position: absolute;
 	right: 32px;
@@ -631,11 +635,14 @@ footer .container .footer-box .footer-item .footer-text-box a {
 	align-items: center;
 	gap: 10px;
 }
-#shop .filter-items .item img {
+.filter-items .item img {
 	border-radius: 500px;
 }
-#shop .filter-items .item .item-title {
+.filter-items .item .item-title {
 	text-align: center;
+}
+.filter-items .item .item-title h5 {
+	margin-bottom: 8px;
 }
 /* ######################  HELP SECTION  ###################### */
 #help .container {
@@ -705,7 +712,10 @@ footer .container .footer-box .footer-item .footer-text-box a {
 	letter-spacing: 1.6px;
 	text-transform: uppercase;
 }
-/* ######################  ROMM SINGLE SECTION  ###################### */
+
+/*################################################## ROOM  ################################################## */
+
+/* ######################  ROOM SINGLE SECTION  ###################### */
 .room-header .room-header-box {
 	display: flex;
 	justify-content: space-between;
@@ -753,9 +763,163 @@ footer .container .footer-box .footer-item .footer-text-box a {
 	text-transform: uppercase;
 	position: absolute;
 	top: -170px;
-  left: 50%;
-  transform: translateX(-50%);
+	left: 50%;
+	transform: translateX(-50%);
 }
 .room-next .room-box img {
 	border-radius: 500px;
+}
+
+/*################################################## SHOP SONGLE  ################################################## */
+
+/* ######################  GALLERY SINGLE SECTION  ###################### */
+.gallery {
+	display: flex;
+	align-items: center;
+}
+.gallery img {
+	width: 960px;
+	height: 100vh;
+	max-width: 100%;
+	object-fit: cover;
+}
+.gallery .content {
+	display: flex;
+	flex-direction: column;
+	gap: 48px;
+	width: 640px;
+	margin: 0 auto;
+}
+.gallery .content .content-title {
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+}
+.gallery .content .content-title > div {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+.gallery .content .content-cart {
+	display: flex;
+	gap: 16px;
+}
+.gallery .content .content-cart .num-box {
+	padding: 16px;
+	border-radius: 500px;
+	border: 1px solid #343339;
+	background: #fff;
+	display: flex;
+	align-items: center;
+	gap: 30px;
+}
+.gallery .content .content-cart .num-box .minus,
+.gallery .content .content-cart .num-box .plus {
+	cursor: pointer;
+	padding: 3px;
+}
+.gallery .content .content-cart .add-cart {
+	padding: 24px 40px;
+	border-radius: 500px;
+	background-color: #343339;
+	color: #fff;
+	cursor: pointer;
+}
+.gallery .content .content-details {
+	border-top: 1px solid #cecece;
+	border-bottom: 1px solid #cecece;
+	padding: 32px 0;
+	display: flex;
+	align-items: center;
+	gap: 48px;
+}
+.gallery .content .content-details a {
+	font-size: 16px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+.desc {
+	border-bottom: 1px solid #cecece;
+}
+.desc .container {
+	display: flex;
+	gap: 80px;
+}
+.desc h4 {
+	width: 50%;
+	font-size: 32px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 110%; /* 35.2px */
+	text-transform: uppercase;
+}
+.desc .desc-content {
+	width: 40%;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 180%; /* 43.2px */
+}
+.desc .desc-content ul {
+	margin-top: 40px;
+	padding-left: 35px;
+}
+.desc .desc-content li {
+	list-style: disc;
+}
+.shop-details {
+	position: absolute;
+	right: 0;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 50%;
+	height: 100vh;
+	z-index: 10;
+	background-color: #ededed;
+	transform: translateX(100%);
+	transition: 0.5s;
+}
+.shop-details.show {
+	transform: translateX(0);
+}
+.shop-details .container {
+	padding: 32px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 30px;
+	width: 640px;
+}
+.shop-details .close {
+	text-align: center;
+	cursor: pointer;
+}
+.shop-details .details-box {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+.shop-details .details-box .details-desc p {
+	margin-bottom: 30px;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 160%; /* 28.8px */
+}
+.shop-details .details-box .details-desc ul {
+	padding-left: 25px;
+}
+.shop-details .details-box .details-desc ul li {
+	list-style: disc;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 160%; /* 28.8px */
+}
+.shop-details .line {
+	display: block;
+	width: 100%;
+	height: 1px;
+	background-color: #cecece;
 }
