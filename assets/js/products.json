@@ -1,0 +1,40 @@
+{
+	"products": [
+		{
+			"id": 0,
+			"title": "Modern Chair",
+			"price": "$ 249.00 USD",
+      "imgSrc" : "./assets/img/Frontpage/ElegantLamp1.png"
+		},
+		{
+			"id": 1,
+			"title": "Elegant Lamp",
+			"price": "$ 129.00 USD",
+			"imgSrc": "./assets/img/Frontpage/ElegantLamp1.png"
+		},
+		{
+			"id": 2,
+			"title": "Black Chair",
+			"price": "$ 199.00 USD",
+			"imgSrc": "./assets/img/Frontpage/ElegantLamp1.png"
+		},
+		{
+			"id": 3,
+			"title": "Lisbon Sofa",
+			"price": "$ 1699.00 USD",
+			"imgSrc": "./assets/img/Frontpage/ElegantLamp1.png"
+		},
+		{
+			"id": 4,
+			"title": "Retro Chair",
+			"price": "$ 399.00 USD",
+			"imgSrc": "./assets/img/Frontpage/ElegantLamp1.png"
+		},
+		{
+			"id": 5,
+			"title": "Black Chair",
+			"price": "$ 199.00 USD",
+			"imgSrc": "./assets/img/Frontpage/ElegantLamp1.png"
+		}
+	]
+}
